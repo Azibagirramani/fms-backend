@@ -4,7 +4,7 @@ const express = require('express')
 const server = express()
 
 // server port
-const server_port = process.env.PORT || 80
+const server_port = 7000
 
 // morgan class
 const morgan = require('morgan')
@@ -24,10 +24,12 @@ server.use(morgan('combined'))
 // cors middleware
 server.use(cors())
 
-// base route
+// routes
 const Base = require('./server/routes/index')
+const Users = require('./server/routes/users')
 
 server.use('', Base)
+server.use('/users', Users)
 
 // entry port
 server.listen(server_port, ()=>{
