@@ -4,7 +4,7 @@ const express = require('express')
 const server = express()
 
 // server port
-const server_port = 9000 || env('SERVER_PORT')
+const server_port = 9000
 
 // morgan class
 const morgan = require('morgan')
