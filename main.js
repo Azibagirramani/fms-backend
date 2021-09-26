@@ -18,8 +18,11 @@ server.use(express.urlencoded({
   extended: true
 }));
 
+
+//
+
 // morgan (activity logger)
-server.use(morgan('combined'))
+server.use(morgan('common'))
 
 // cors middleware
 server.use(cors())
@@ -27,9 +30,11 @@ server.use(cors())
 // routes
 const Base = require('./server/routes/index')
 const Users = require('./server/routes/users')
+const Projects = require('./server/routes/projects')
 
 server.use('', Base)
 server.use('/users', Users)
+server.use('/projects', Projects)
 
 // entry port
 server.listen(server_port, ()=>{

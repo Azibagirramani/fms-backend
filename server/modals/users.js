@@ -6,6 +6,7 @@ const Users = connection.define('users',{
     type: DataTypes.STRING,
     allowNull: true
   }
+}, {
 })
 
 module.exports = Users
