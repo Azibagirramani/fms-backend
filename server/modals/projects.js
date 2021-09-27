@@ -26,6 +26,6 @@ Projects.init(
 );
 
 
-Projects.sync({ force: true, alter: true })
+// Projects.sync({ force: true, alter: true })
 
 module.exports = Projects

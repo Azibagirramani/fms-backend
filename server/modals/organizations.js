@@ -1,10 +1,9 @@
-const { DataTypes, Model } = require("sequelize");
+const { DataTypes, Model, Sequelize } = require("sequelize");
 const connection = require("../configurations/database");
-const Supervisors = require("./supervisor")
 
 class Organisations extends Model {}
 
-Projects.init(
+Organisations.init(
   {
     org_name: {
       type: DataTypes.STRING,
@@ -13,13 +12,27 @@ Projects.init(
     },
     description: {
       type: DataTypes.STRING,
+      allowNull: true,
     },
-    logo:{
-        type: DataTypes.STRING,
+    url: {
+      type: DataTypes.STRING,
     },
-    employee_number:{
-        type: DataTypes.NUMBER,
-    }
+    logo: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    phone:{
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    address:{
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    number_of_employee: {
+      type: DataTypes.SMALLINT,
+      allowNull: true,
+    },
   },
   {
     sequelize: connection,
@@ -29,9 +42,10 @@ Projects.init(
 );
 
 // update or create table if not exist
-Organisations.sync({ force: true, alter: true })
+Organisations.sync({ alter: true });
 
 // relationships
-Organisations.hasMany(Supervisors)
+// Organisations.hasMany(Supervisors)
 
-module.exports = Organisations
+module.exports = Organisations;
+

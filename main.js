@@ -29,14 +29,18 @@ server.use(cors())
 
 // routes
 const Base = require('./server/routes/index')
-const Users = require('./server/routes/users')
-const Projects = require('./server/routes/projects')
+// const Users = require('./server/routes/users')
+// const Projects = require('./server/routes/projects')
+const Organization = require('./server/routes/organizatons')
+
 
 server.use('', Base)
-server.use('/users', Users)
-server.use('/projects', Projects)
+server.use('/organization', Organization)
+
+// server.use('/users', Users)
+// server.use('/projects', Projects)
 
 // entry port
 server.listen(server_port, ()=>{
-    console.log(`server startd on http://127.0.0.1:${server_port}/`)
+    console.log(`server startd on http://127.0.0.1:${server_port}`)
 })

@@ -22,8 +22,8 @@ Supervisor.init(
 );
 
 
-Supervisor.sync({ force: true, alter: true })
+// Supervisor.sync({ force: true, alter: true })
 
-Supervisor.hasMany(Projects)
+// Supervisor.hasMany(Projects)
 
 module.exports = Supervisor
